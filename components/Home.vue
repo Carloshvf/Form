@@ -17,6 +17,7 @@
           <b-form-group label="Senha:">
             <b-form-input placeholder="Senha" required></b-form-input>
           </b-form-group>
+          <b-button class="" @click="salvarInfo()">Salvar</b-button>
         </b-form>
       </div>
     </div>
@@ -26,5 +27,12 @@
 <script>
 export default {
   name: "Home",
+  data() {
+    return {};
+  },
+
+  methods: {
+    salvarInfo() {},
+  },
 };
 </script>

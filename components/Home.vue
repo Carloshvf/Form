@@ -1,5 +1,5 @@
 <template>
-  <div class="container d-flex justify-content-center">
+  <div class="container d-flex justify-content-center mt-5">
     <div class="form-row">
       <div class="col">
         <h1>Cadastre-se</h1>
@@ -8,20 +8,23 @@
             <b-form-input
               type="email"
               placeholder="Email"
+              v-model="email"
               required
             ></b-form-input>
           </b-form-group>
           <b-form-group label="Nome:">
             <b-form-input
-              placeholder="Nome"
+              placeholder="Digite o seu nome..."
               type="text"
+              v-model="name"
               required
             ></b-form-input>
           </b-form-group>
           <b-form-group label="Senha:">
             <b-form-input
-              placeholder="Senha"
+              placeholder="Digite uma senha..."
               type="password"
+              v-model="password"
               required
             ></b-form-input>
           </b-form-group>
@@ -33,15 +36,30 @@
 </template>
 
 <script>
+import { mapActions, mapMutations } from "vuex";
+
 export default {
   name: "Home",
   data() {
-    return {};
+    return {
+      email: "",
+      name: "",
+      password: "",
+      detailInfo: [],
+    };
   },
 
   methods: {
-    salvarInfo() {
-      return;
+    ...mapActions(["uploadInfo"]),
+
+    async salvarInfo() {
+      this.detailInfo.push({
+        email: this.email,
+        name: this.name,
+        password: this.password,
+      });
+      await this.uploadInfo(this.details);
+      console.log(this.detailInfo);
     },
   },
 };
@@ -55,8 +73,7 @@ export default {
   margin-bottom: 1em;
 }
 
-.btn-salvar {
-  text-align: center;
-  align-items: center;
+.home input {
+  width: 40em;
 }
 </style>

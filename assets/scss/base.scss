@@ -5,7 +5,11 @@ body {
   font-family: "Arial";
 }
 
-.btn {
+.title {
+  text-align: center;
+}
+
+.btn-save {
   background-color: #1a8918;
   color: #fff;
   text-align: center;
@@ -17,7 +21,35 @@ body {
   padding: 10px 15px;
   font-size: 1em;
 }
-.btn:hover {
+.btn-save:focus {
+  background-color: #0f730c;
+}
+.btn-save:hover {
   background-color: #0f730c;
   color: #fff;
+}
+.btn-save:active {
+  background-color: #0f730c;
+}
+.btn-cancel {
+  background-color: #979696;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 120px;
+  font-weight: bold;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1em;
+}
+.btn-cancel:focus {
+  background-color: #b1aeae;
+}
+.btn-cancel:hover {
+  background-color: #b1aeae;
+  color: #fff;
+}
+.btn-cancel:active {
+  background-color: #b1aeae;
 }

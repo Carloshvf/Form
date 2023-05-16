@@ -28,7 +28,7 @@
               required
             ></b-form-input>
           </b-form-group>
-          <b-button class="btn" @click="salvarInfo()">Salvar</b-button>
+          <b-button class="btn-save" @click="salvarInfo()">Salvar</b-button>
         </b-form>
       </div>
     </div>
@@ -50,16 +50,17 @@ export default {
   },
 
   methods: {
-    ...mapActions(["uploadInfo"]),
-
+    ...mapMutations({
+      userAdd: "setUser",
+    }),
     async salvarInfo() {
+      this.detailInfo.splice(0);
       this.detailInfo.push({
         email: this.email,
         name: this.name,
         password: this.password,
       });
-      await this.uploadInfo(this.details);
-      console.log(this.detailInfo);
+      await this.userAdd({ info: this.detailInfo[0] });
     },
   },
 };

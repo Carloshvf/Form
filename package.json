@@ -6,11 +6,15 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "server": "json-server --watch src/api/mock/data/mocked.json"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "axios": "^1.4.0",
     "bootstrap": "^4.6.2",
     "bootstrap-vue": "^2.22.0",
+    "cookie-universal-nuxt": "^2.2.2",
     "core-js": "^3.25.3",
     "node-sass": "^8.0.0",
     "nuxt": "^2.15.8",

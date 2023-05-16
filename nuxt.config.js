@@ -1,4 +1,9 @@
 export default {
+  env: {
+    baseURL: process.env.baseURL || "https://localhost:3000",
+  },
+
+  mode: "spa",
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: "teste-form",
@@ -30,6 +35,8 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     "bootstrap-vue/nuxt",
+    "cookie-universal-nuxt",
+    "@nuxtjs/axios",
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

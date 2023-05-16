@@ -1,16 +1,15 @@
 export const state = () => ({
-  all: [],
-  teste: 1,
+  infoUser: [],
 });
 
 export const mutations = {
-  setAll(state, all) {
-    state.all = all;
+  setUser(state, infoUser) {
+    state.infoUser.push(infoUser.info);
   },
-};
-
-export const actions = {
-  async uploadInfo(context, dados) {
-    context.commit("setAll", dados);
+  setDelete(state, index) {
+    state.infoUser.splice(index, 1);
+  },
+  setEditSplice(state, value) {
+    state.infoUser.splice(value.number, 1), state.infoUser.push(value.details);
   },
 };
